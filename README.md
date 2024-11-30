@@ -11,7 +11,7 @@ The implementation includes performance benchmarking and correctness verificatio
 <h3>Project Structure</h3>
 <hr>
 
-C Program (ConvertImageC.c):
+C Program (main.c):
 
 
 - Collects input, and creates dynamic array.
