@@ -1,4 +1,4 @@
-// San Buenaventura, Carlo & Villaflor, John Wayne S16
+// San Buenaventura, Carlo & Villaflor, John Wayne S14
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -9,11 +9,11 @@ extern void imgCvtGrayInttoFloat(int* intImage, float* floatImage, int height, i
 int main() {
     int height, width;
 
-    // Read image height and width
+    // Read image height and width 
     printf("Enter the height and width of the image: ");
     scanf("%d %d", &height, &width);
 
-    // Create Dynamic Array
+    // Create Dynamic Array for image
     int* intImage = (int*)malloc(height * width * sizeof(int));
 
     // Read pixel values for the integer image
