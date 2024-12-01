@@ -1,4 +1,4 @@
-; San Buenaventura, Carlo & Villaflor, John Wayne S16
+; San Buenaventura, Carlo & Villaflor, John Wayne S14
 section .text
 bits 64
 default rel
@@ -18,10 +18,10 @@ imgCvtGrayInttoFloat:
     imul edx, ecx          ; edx = height * width
 
     mov eax, 255           ; Load 255 as an integer
-    cvtsi2ss xmm1, eax     ; Convert 255 to a float
+    cvtsi2ss xmm1, eax     ; Convert 255 to a float in SIMD
 
     ; Initialize loop index
-    xor ebx, ebx           ; Index (i)
+    xor ebx, ebx           ; Index (i) for each
 
 convert_loop:
     ; Check if all pixels are processed
@@ -30,9 +30,9 @@ convert_loop:
 
     ; Load integer pixel value into xmm0
     mov eax, dword [rdi + rbx * 4] ; Load intImage[i]
-    cvtsi2ss xmm0, eax             ; Convert integer to float
+    cvtsi2ss xmm0, eax             ; Convert integer to float 
 
-    ; Perform division: f = i / 255
+    ; Perform division: f = i / 255 With new Float Number
     divss xmm0, xmm1              
 
     ; Store result in floatImage
